@@ -1,4 +1,4 @@
-# 🧠 RAG Q&A Chatbot
+# RAG Q&A Chatbot
 
 This repository demonstrates how to build a **Retrieval-Augmented Generation (RAG) chatbot** using **Python + Jupyter Notebooks**.  
 The chatbot can answer questions grounded in your own documents instead of hallucinating answers.
@@ -13,8 +13,8 @@ It’s built with modern tools like **LangChain**, **FAISS**, and **uv** (for fa
 - 🤖 Q&A chatbot powered by **LLMs** (Ollama, OpenAI, Hugging Face)
 - 📚 Source citation alongside answers
 - 📝 Step-by-step Jupyter notebooks for learning
-- ⚡ Simple evaluation of RAG vs. non-RAG answers
-- 🌐Streamlit demo app
+- ⚡  Simple evaluation of RAG vs. non-RAG answers
+- 🌐 Streamlit demo app
 
 ---
 
