@@ -21,17 +21,20 @@ It’s built with modern tools like **LangChain**, **FAISS**, and **uv** (for fa
 ## 📂 Project Structure
 
 ```bash
-rag-chatbot/
-│── README.md
-│── pyproject.toml
-│── notebooks/
-│ ├── 01_intro_rag.ipynb
-│ ├── 02_build_index.ipynb
-│ ├── 03_chatbot_pipeline.ipynb
-│ ├── 04_evaluation.ipynb
-│ └── 05_streamlit_app.ipynb
-│── data/knowledge/
-│── src/rag_chatbot/
+├── README.md
+├── pyproject.toml
+├── main.py
+├── data/knowledge/
+│   └── example.txt
+├── src/rag_chatbot/
+│   ├── __init__.py
+│   ├── retriever.py
+│   ├── pipeline.py
+├── notebooks/
+│   ├── 01_intro_rag.ipynb
+│   ├── 02_build_index.ipynb
+│   ├── 03_chatbot_pipeline.ipynb
+│   └── ...
 ```
 
 ---
@@ -39,7 +42,7 @@ rag-chatbot/
 ## 🛠️ Tech Stack
 
 - **Languages:** Python  
-- **AI/ML:** LangChain, FAISS, BM25, SentenceTransformers 
+- **AI/ML:** LangChain, FAISS, BM25, SentenceTransformers
 - **LLMs:** Ollama (local), OpenAI, Hugging Face
 - **Tools:** Jupyter, Streamlit, GitHub
 - **Package Management:** [uv](https://docs.astral.sh/uv/)
