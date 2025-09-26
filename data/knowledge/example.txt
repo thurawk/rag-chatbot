@@ -1,0 +1,14 @@
+Retrieval-Augmented Generation (RAG) is a technique in natural language processing that combines large language models with external knowledge retrieval. 
+Instead of generating answers purely from memory, the model retrieves relevant documents from a knowledge base and uses them to provide grounded, accurate responses.
+
+FAISS (Facebook AI Similarity Search) is a library developed by Meta AI for efficient similarity search and clustering of dense vectors. 
+It is commonly used in RAG pipelines to store and query vector embeddings of documents.
+
+BM25 is a ranking function used in information retrieval. 
+It is based on the probabilistic retrieval model and is particularly effective for sparse text search, complementing dense search methods like FAISS.
+
+LangChain is a framework for building applications powered by large language models. 
+It provides utilities for connecting models with data sources, building chains of reasoning, and deploying AI applications quickly.
+
+SentenceTransformers is a Python library for embedding sentences, paragraphs, and documents into dense vector spaces. 
+These embeddings can be used for semantic search, clustering, and RAG-based retrieval.
