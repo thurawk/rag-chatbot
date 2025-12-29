@@ -1,0 +1,10 @@
+langchain
+langchain-community
+faiss-cpu
+sentence-transformers
+streamlit
+ollama
+jupyterlab
+ipykernel
+unstructured
+langchain-huggingface
