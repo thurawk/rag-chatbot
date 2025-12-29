@@ -1,19 +1,14 @@
 # RAG Q&A Chatbot
 
-This repository demonstrates how to build a **Retrieval-Augmented Generation (RAG) chatbot** using **Python + Jupyter Notebooks**.  
-The chatbot can answer questions grounded in your own documents instead of hallucinating answers.
-
-It’s built with modern tools like **LangChain**, **FAISS**, and **uv** (for fast, reliable dependency management).
+This repository demonstrates how to build a **Retrieval-Augmented Generation (RAG) chatbot** using **Python**. The chatbot can answer questions grounded in your own documents instead of hallucinating answers.
 
 ---
 
 ## 🚀 Features
 
-- 🔎 Document retrieval with **FAISS** (dense search) and **BM25** (sparse search)
-- 🤖 Q&A chatbot powered by **LLMs** (Ollama, OpenAI, Hugging Face)
+- 🔎 Document retrieval with **FAISS** (dense search)
+- 🤖 Q&A chatbot powered by **LLMs** (Ollama, compatible with OpenAI)
 - 📚 Source citation alongside answers
-- 📝 Step-by-step Jupyter notebooks for learning
-- ⚡  Simple evaluation of RAG vs. non-RAG answers
 - 🌐 Streamlit demo app
 
 ---
@@ -21,66 +16,94 @@ It’s built with modern tools like **LangChain**, **FAISS**, and **uv** (for fa
 ## 📂 Project Structure
 
 ```bash
-├── README.md
-├── pyproject.toml
-├── main.py
-├── data/knowledge/
-│   └── example.txt
+├── data/knowledge/           # Place your text documents here
+├── notebooks/
+│   └── RAG_QA_Chatbot.ipynb  # Jupyter notebook
 ├── src/rag_chatbot/
 │   ├── __init__.py
-│   ├── retriever.py
-│   ├── pipeline.py
-├── notebooks/
-│   ├── 01_intro_rag.ipynb
-│   ├── 02_build_index.ipynb
-│   ├── 03_chatbot_pipeline.ipynb
-│   └── ...
+│   ├── app.py                # Streamlit app
+│   ├── pipeline.py           # Chatbot pipeline
+│   ├── retriever.py          # Document retriever
+├── main.py                   # CLI entry point
+├── pyproject.toml
+├── README.md
+├── requirements.txt          # Project dependencies
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Languages:** Python  
-- **AI/ML:** LangChain, FAISS, BM25, SentenceTransformers
-- **LLMs:** Ollama (local), OpenAI, Hugging Face
-- **Tools:** Jupyter, Streamlit, GitHub
-- **Package Management:** [uv](https://docs.astral.sh/uv/)
+- **Languages:** Python
+- **AI/ML:** LangChain, FAISS, SentenceTransformers
+- **LLMs:** Ollama (default: llama3)
+- **Web App:** Streamlit
 
 ---
 
-## ⚡ Quickstart (with uv)
+## ⚡ Quickstart
 
-### 1. Clone the repo
+### 1. Prerequisites
+
+- **Python 3.9+**
+- **Ollama**: [Download and install Ollama](https://ollama.com/).
+  - Pull the default model:
+
+      ```bash
+      ollama pull llama3
+      ```
+
+### 2. Installation
+
+1. **Clone the repo** (if you haven't already):
+
+    ```bash
+    git clone https://github.com/thurawk/rag-chatbot.git
+    cd rag-chatbot
+    ```
+
+2. **Create and activate a virtual environment**:
+
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. **Install dependencies**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    *Note: This project includes `unstructured` for file processing, which may require system dependencies like `libmagic` depending on your OS.*
+
+### 3. Usage
+
+#### CLI Chatbot
+
+Run the simple command-line interface:
 
 ```bash
-git clone https://github.com/<thrawk>/rag-chatbot.git
-cd rag-chatbot
+python main.py
 ```
 
-### 2. Install dependencies
+*Note: Make sure your `venv` is active!*
+
+#### Streamlit Web App
+
+Launch the interactive web UI:
 
 ```bash
-uv sync
+streamlit run src/rag_chatbot/app.py
 ```
 
-### 3. Launch Jupyter
+### 4. Custom Data
 
-```bash
-uv run jupyter lab
-```
+Place your `.txt` files in the `data/knowledge/` directory. The chatbot will automatically ingest them when it initializes.
 
-### 4. Explore notebooks
+---
 
-```bash
-notebooks/01_intro_rag.ipynb
-```
+## 🐛 Troubleshooting
 
-### 🎯 Example
-
-```bash
-Query: What is Retrieval-Augmented Generation?
-Chatbot: Retrieval-Augmented Generation (RAG) is a technique that combines document retrieval with large language models. Instead of generating answers purely from memory, the model retrieves relevant knowledge chunks and uses them to generate more accurate responses.
-
-📖 Sources: [RAG.txt, line 12–27]
-```
+- **ModuleNotFoundError**: Ensure you have activated your virtual environment (`source venv/bin/activate`).
+- **Ollama Connection Error**: Make sure the Ollama app is running in the background.
