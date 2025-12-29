@@ -27,7 +27,7 @@ This repository demonstrates how to build a **Retrieval-Augmented Generation (RA
 ├── main.py                   # CLI entry point
 ├── pyproject.toml
 ├── README.md
-├── requirements.txt          # Project dependencies
+└── requirements.txt          # Project dependencies
 ```
 
 ---
