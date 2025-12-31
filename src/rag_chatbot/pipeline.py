@@ -1,7 +1,7 @@
 # src/rag_chatbot/pipeline.py
 from langchain.chains import RetrievalQA
 from langchain_community.llms import Ollama  # swap with OpenAI if needed
-from retriever import build_retriever
+from src.rag_chatbot.retriever import build_retriever
 
 def build_chatbot(knowledge_path="data/knowledge", k=3, model="llama3"):
     """Creates a Retrieval-Augmented Generation chatbot pipeline."""

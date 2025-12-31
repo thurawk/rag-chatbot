@@ -1,6 +1,6 @@
 # src/rag_chatbot/retriever.py
 from langchain_community.document_loaders import DirectoryLoader
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 def build_retriever(knowledge_path="data/knowledge", k=3):
