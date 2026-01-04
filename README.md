@@ -75,8 +75,6 @@ This repository demonstrates how to build a **Retrieval-Augmented Generation (RA
     pip install -r requirements.txt
     ```
 
-    *Note: This project includes `unstructured` for file processing, which may require system dependencies like `libmagic` depending on your OS.*
-
 ### 3. Usage
 
 #### CLI Chatbot
